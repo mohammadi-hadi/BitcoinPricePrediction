@@ -1,9 +1,14 @@
-# Bitcoin Price Prediction
+<div align="center">
 
-Time-series analysis of historical Bitcoin prices using seasonal ARIMA (SARIMAX) and an LSTM neural network.
+# Bitcoin Price Prediction with SARIMAX and LSTM
 
-[![Python](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Dataset: Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF.svg)](https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data)
+
+*Time-series forecasting of Bitcoin prices with a seasonal ARIMA model and an LSTM network.*
+
+</div>
 
 ## Overview
 
@@ -23,18 +28,33 @@ An EViews workfile with a complementary ARIMA analysis is also included alongsid
 
 Implemented in `Bitcoin-ARIMA08.py` (on the [`Model`](../../tree/Model) branch):
 
-- Cleaning of the minute-level OHLC data (forward-filling prices, zero-filling volume for empty candles) and resampling for analysis.
-- Interactive visualization of historical prices and trading volume with Plotly.
-- Seasonal decomposition of the price series and stationarity checks with the augmented Dickey-Fuller test, plus ACF/PACF plots.
-- SARIMAX model selection via a grid search over (p, q, P, Q) orders, comparing candidates by AIC, followed by residual diagnostics.
-- An LSTM model (Keras) with a single 128-unit LSTM layer and a dense output layer, trained on MinMax-scaled prices.
-- Evaluation of predictions against actual prices using MSE and MAE, with forecast-vs-actual plots.
+- **Preprocessing**: cleaning of the minute-level OHLC data (forward-filling prices, zero-filling volume for empty candles) and resampling for analysis.
+- **Exploration**: interactive visualization of historical prices and trading volume with Plotly.
+- **Diagnostics**: seasonal decomposition of the price series and stationarity checks with the augmented Dickey-Fuller test, plus ACF/PACF plots.
+- **SARIMAX**: model selection via a grid search over (p, q, P, Q) orders, comparing candidates by AIC, followed by residual diagnostics.
+- **LSTM**: a Keras model with a single 128-unit LSTM layer and a dense output layer, trained on MinMax-scaled prices.
+- **Evaluation**: predictions compared against actual prices using MSE and MAE, with forecast-vs-actual plots.
 
-## Repository structure
+## Quick Start
+
+```bash
+git clone https://github.com/mohammadi-hadi/BitcoinPricePrediction.git
+cd BitcoinPricePrediction
+pip install -r requirements.txt
+
+git checkout Model   # the analysis script lives on this branch
+```
+
+1. Download the Kaggle minute-level dataset linked above and update the file paths at the top of `Bitcoin-ARIMA08.py`.
+2. Run the script section by section (it was written as an exploratory script, e.g. in Spyder or a notebook environment).
+3. Opening `bitcoin.wf1` requires [EViews](https://www.eviews.com/).
+
+## Repository Structure
 
 ```
 main branch
 ├── Bitcoin Price.xlsx   # Daily OHLC / volume / market cap data
+├── requirements.txt     # Python dependencies
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md
@@ -44,24 +64,11 @@ Model branch (analysis files)
 └── bitcoin.wf1          # EViews workfile with ARIMA analysis
 ```
 
-## Requirements / How to run
-
-Python 3 with:
-
-```
-pandas numpy matplotlib seaborn plotly scipy statsmodels scikit-learn tensorflow keras pytz
-```
-
-1. Check out the `Model` branch to get `Bitcoin-ARIMA08.py`.
-2. Download the Kaggle minute-level dataset linked above and update the file paths at the top of the script.
-3. Run the script section by section (it was written as an exploratory script, e.g. in Spyder or a notebook environment).
-
-Opening `bitcoin.wf1` requires EViews.
-
 ## License
 
-MIT — see [LICENSE](LICENSE).
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
 
-## Author
+## Contact
 
-Hadi Mohammadi — [mohammadi.cv](https://mohammadi.cv)
+- **Hadi Mohammadi** — Utrecht University
+- Website: [mohammadi.cv](https://mohammadi.cv)
