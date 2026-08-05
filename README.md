@@ -2,6 +2,7 @@
 
 # Bitcoin Price Prediction with SARIMAX and LSTM
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21804037.svg)](https://doi.org/10.5281/zenodo.21804037)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Dataset: Kaggle](https://img.shields.io/badge/Dataset-Kaggle-20BEFF.svg)](https://www.kaggle.com/datasets/mczielinski/bitcoin-historical-data)
