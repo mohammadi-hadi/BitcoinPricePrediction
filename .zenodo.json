@@ -1,0 +1,20 @@
+{
+  "upload_type": "software",
+  "title": "Bitcoin Price Prediction with SARIMAX and LSTM",
+  "description": "Bitcoin price forecasting with SARIMAX and LSTM on historical market data.",
+  "creators": [
+    {
+      "name": "Mohammadi, Hadi",
+      "orcid": "0000-0003-0860-9200"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bitcoin",
+    "forecasting",
+    "time-series",
+    "machine-learning",
+    "arima",
+    "lstm"
+  ]
+}
